@@ -1,0 +1,34 @@
+@import './variables.scss';
+
+
+@mixin mediumScreens() {
+    @media only screen and (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin centerCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin defaultButton {
+    background: $primary-color;
+    color: $white;
+    height: 50px;
+    width: 100%;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    transition: .4s ease-in-out;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    &:hover {
+        background: darken($color: $primary-color-hover, $amount: 10%);
+    }
+}

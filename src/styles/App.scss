@@ -1,0 +1,13 @@
+@import "./variables.scss";
+@import "./Mixins.scss";
+
+.main-sectiion {
+  @include centerCenter;
+  height: 100vh;
+}
+.main-button {
+  @include defaultButton;
+  @include mediumScreens {
+    width: 100%;
+  }
+}
