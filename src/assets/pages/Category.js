@@ -28,7 +28,7 @@ function Category(props) {
       .then((response) => response.json())
       .then(
         (data) => {
-          setCategoryData(data);
+          setCategoryData({ ...data });
           setLoading(false);
         },
         (error) => {
@@ -44,7 +44,7 @@ function Category(props) {
     return (
       <div className="section">
         <Link className="back-button" to="">
-        <img src={backArrow} width="25" height="25" alt="arrow" />
+          <img src={backArrow} width="25" height="25" alt="arrow" />
         </Link>
         <ErrorBoundary>
           {isLoadinng ? (
@@ -54,20 +54,29 @@ function Category(props) {
               color="#595ecd"
               height={50}
               width={50}
-              timeout={3000}
             />
           ) : (
             <div className="joke-section">
               {CategoryData.setup ? (
                 <>
-                  <p>{CategoryData.type}</p>
-                  <p>{CategoryData.setup}</p>
-                  <p>{CategoryData.delivery}</p>
+                  <p className="joke-type">
+                    Type:- <span>{CategoryData.type}</span>
+                  </p>
+                  <p>
+                    Setup<span>{CategoryData.setup}</span>
+                  </p>
+                  <p>
+                    Delivery<span>{CategoryData.delivery}</span>
+                  </p>
                 </>
               ) : (
                 <>
-                  <p>{CategoryData.type}</p>
-                  <p>{CategoryData.joke}</p>
+                  <p className="joke-type">
+                    Type:- <span>{CategoryData.type}</span>
+                  </p>
+                  <p>
+                    Joke<span>{CategoryData.joke}</span>
+                  </p>
                 </>
               )}
 

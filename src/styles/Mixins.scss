@@ -14,6 +14,11 @@
     flex-direction: column;
 }
 
+@mixin center {
+    display: flex;
+    justify-content: center;
+}
+
 @mixin defaultButton {
     background: $primary-color;
     color: $white;

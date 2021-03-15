@@ -40,12 +40,39 @@
 
 .joke-section {
   width: 25%;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  p {
+    color: #000;
+    font-size: 18px;
+    line-height: 22px;
+    span {
+      display: block;
+      margin-top: .5rem;
+      font-size: 16px;
+      color: #828282;
+      line-height: 20px;
+    }
+  }
+  p.joke-type {
+    font-size: 14px;
+    text-align: right;
+    font-weight: 500;
+    color: #828282;
+    span {
+      color: green;
+      display: inline-block;
+      text-transform: capitalize;
+    font-size: 14px;
+
+    }
+  }
   @include mediumScreens {
     width: 100%;
   }
 }
 
 .center-loader {
-  display: flex;
-  justify-content: center;
+  @include center;
 }

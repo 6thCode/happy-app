@@ -46,7 +46,6 @@ function Main() {
               color="#595ecd"
               height={50}
               width={50}
-              timeout={3000}
             />
           ) : (
             CategoryData.categories.map((item, i) => {
