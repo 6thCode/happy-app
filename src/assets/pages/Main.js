@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ErrorBoundary from "../components/errorBoundary";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
 import Loader from "react-loader-spinner";
@@ -38,26 +37,19 @@ function Main() {
   } else {
     return (
       <div className="container main-sectiion">
-        <ErrorBoundary>
         <h2 className="text-center pb-5">Happy App</h2>
-          {isLoadinng ? (
-            <Loader
-              type="ThreeDots"
-              color="#595ecd"
-              height={50}
-              width={50}
-            />
-          ) : (
-            CategoryData.categories.map((item, i) => {
-              return (
-                <Link key={i} to={"/category/" + item}>
-                  <Button title={item} />
-                </Link>
-              );
-            })
-          )}
-          <ToastContainer />
-        </ErrorBoundary>
+        {isLoadinng ? (
+          <Loader type="ThreeDots" color="#595ecd" height={50} width={50} />
+        ) : (
+          CategoryData.categories.map((item, i) => {
+            return (
+              <Link key={i} to={"/category/" + item}>
+                <Button title={item} />
+              </Link>
+            );
+          })
+        )}
+        <ToastContainer />
       </div>
     );
   }
