@@ -5,9 +5,47 @@
   @include centerCenter;
   height: 100vh;
 }
+
 .main-button {
   @include defaultButton;
   @include mediumScreens {
     width: 100%;
   }
+}
+
+.main-sectiion {
+  a {
+    width: 30%;
+    @include mediumScreens {
+      width: 100%;
+    }
+  }
+}
+
+.back-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.section {
+  @include centerCenter;
+  @extend .main-sectiion;
+  margin: auto;
+  @include mediumScreens {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+.joke-section {
+  width: 25%;
+  @include mediumScreens {
+    width: 100%;
+  }
+}
+
+.center-loader {
+  display: flex;
+  justify-content: center;
 }
