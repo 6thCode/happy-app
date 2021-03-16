@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="container main-sectiion"
+>
+  <h2
+    className="text-center pb-5"
+  >
+    Happy App
+  </h2>
+  <div
+    className="Toastify"
+  />
+</div>
+`;
