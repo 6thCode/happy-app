@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.9",
+    "enzyme": "^3.11.0",
     "jest": "^26.6.0"
   }
 }

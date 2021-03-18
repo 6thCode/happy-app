@@ -12,11 +12,12 @@ function Main() {
 
   const apiUrl = "https://v2.jokeapi.dev/categories"
 
+  // Fetching categories begins here 
   useEffect(() => {
-    firstLoad();
+    fetchCategories();
   }, []);
 
-  const firstLoad = () => {
+  const fetchCategories = () => {
     setLoading(true);
     fetch(`${apiUrl}`)
       .then((response) => response.json())
@@ -38,6 +39,7 @@ function Main() {
     return (
       <div className="container main-sectiion">
         <h2 className="text-center pb-5">Happy App</h2>
+        {/* Fetching categories begins here */}
         {isLoadinng ? (
           <Loader type="ThreeDots" color="#595ecd" height={50} width={50} />
         ) : (

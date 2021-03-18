@@ -3,20 +3,26 @@ import Button from "../components/Button";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "react-loader-spinner";
-import { Link } from "react-router-dom";
-import backArrow from '../imgs/arrow-back.png';
+import { useHistory } from "react-router-dom";
+import backArrow from "../imgs/arrow-back.png";
 
 function Category(props) {
   const [error, setError] = useState(null);
   const [isLoadinng, setLoading] = useState(false);
   const [CategoryData, setCategoryData] = useState({});
 
+  const history = useHistory();
+
+  function handleClick() {
+    history.push("/");
+  }
+
   useEffect(() => {
-    firstLoad(props.computedMatch.params.categoryId);
+    fetchJokeContent(props.computedMatch.params.categoryId);
     // eslint-disable-next-line
   }, []);
 
-  const firstLoad = (category) => {
+  const fetchJokeContent = (category) => {
     setLoading(true);
     const contentUrl =
       "https://v2.jokeapi.dev/joke/" +
@@ -42,9 +48,10 @@ function Category(props) {
   } else {
     return (
       <div className="section">
-        <Link className="back-button" to="">
+        <button className="back-button" type="button" onClick={handleClick}>
           <img src={backArrow} width="25" height="25" alt="arrow" />
-        </Link>
+        </button>
+        {/* Fetching jokes begins here */}
         {isLoadinng ? (
           <Loader
             className="center-loader"
@@ -77,12 +84,12 @@ function Category(props) {
                 </p>
               </>
             )}
-
+            {/* button to fetch random jokes */}
             <div className="">
               <Button
                 title="Randomize"
                 handleClick={() => {
-                  firstLoad(props.computedMatch.params.categoryId);
+                  fetchJokeContent(props.computedMatch.params.categoryId);
                 }}
               />
             </div>
